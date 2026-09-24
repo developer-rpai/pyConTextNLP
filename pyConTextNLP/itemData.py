@@ -29,7 +29,7 @@ def get_items(_file):
     context_items =  [contextItem((d["Lex"],
                                    d["Type"],
                                    r"%s"%d["Regex"],
-                                   d["Direction"])) for d in yaml.load_all(f0)]
+                                   d["Direction"])) for d in yaml.safe_load_all(f0)]
     f0.close()
     return context_items
 
